@@ -14,7 +14,9 @@ public class Animal {
     // Create a constructor that will accept all fields as arguments.
     public Animal(String sex, int age, int weight, String animalName,
                   String animalID, String animalBirthDate, String animalColor,
-                  String animalOrigin) {
+                  String animalOrigin, String animalArrivalDate) {
+        // Add an animal to keep track of the number of animals in our zoo.
+        numOfAnimals++;
         this.sex = sex;
         this.age = age;
         this.weight = weight;
@@ -23,10 +25,14 @@ public class Animal {
         this.animalBirthDate = animalBirthDate;
         this.animalColor = animalColor;
         this.animalOrigin = animalOrigin;
+        this.animalArrivalDate = animalArrivalDate;
     }
 
+    // Create all attributes (fields) needed for the ZooKeeperChallenge program.
 
-    // Create all attributes (fields) needed for our midterm program.
+
+
+
     // sex will be 'male' or 'female'
     private String sex;
     // age will be in years
@@ -35,7 +41,8 @@ public class Animal {
     private int weight;
     // name will be a String;
     private String animalName;
-    // animalID
+    // animalID will be first two latin letters of the species name and an integer number. Number part of the ID must be
+    // at least two characters. For example: Hy01, Hy02, Be01, Be02, etc.
     private String animalID;
     // animalBirthDate is going to be a string here (in this class)
     private String animalBirthDate;
@@ -43,9 +50,8 @@ public class Animal {
     private String animalColor;
     // origin will be a string like: "from Friguia Park, Tunisia"
     private String animalOrigin;
-
-
-
+    // arrival date will be the system date when the animal object was created
+    private String animalArrivalDate;
 
     // Create getters and setters
 
@@ -101,8 +107,10 @@ public class Animal {
     public int getWeight() {
         return weight;
     }
-
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    public String getAnimalArrivalDate() { return animalArrivalDate; }
+    public void setAnimalArrivalDate(String animalArrivalDate) { this.animalArrivalDate = animalArrivalDate; }
 }
