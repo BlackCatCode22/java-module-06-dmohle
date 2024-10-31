@@ -7,7 +7,32 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 public class Utilities {
+
+    public static String calcAnimalID(String animalSpecies) {
+        String myID = "";
+        if (animalSpecies.contains("hy")) {
+            int myNumOfHyenas = 0;
+            myNumOfHyenas = Hyena.numOfHyenas + 1;
+            myID = "Hy0" + myNumOfHyenas;
+        }
+        return myID;
+    }
+
+    public static String arrivalDate() {
+        Date today = new Date();
+        // Define the desired date format
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatterYear = new SimpleDateFormat("yyyy");
+
+        // Format the date and store it in a string
+        String strTodaysDate = formatter.format(today);
+        String strTodaysYear = formatterYear.format(today);
+
+        // Return the date as a string
+        return strTodaysDate;
+    }
 
     public static String calcAnimalBirthDate(int age, String theSeason) {
         // This is all of the date stuff we did last week:
@@ -50,9 +75,7 @@ public class Utilities {
                 animalBirthdate = Integer.toString(animalBirthYear) + "-01-01"; // Default case for anything else
                 break;
         }
-
         return animalBirthdate;
-
     }
 
     public static AnimalNameListsWrapper createAnimalNameLists(String filePath) {
